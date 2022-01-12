@@ -1,0 +1,14 @@
+const { Client, Collection } = require ("discord.js")
+const client = new Client ({
+    disableEveryone: true,
+    disabledEvents: ["GUILD_MEMBER_REMOVE", "GUILD_UPDATE", "GUILD_MEMBERS_CHUNK", "GUILD_ROLE_CREATE", "GUILD_EMOJIS_UPDATE", "GUILD_INTEGRATIONS_UPDATE", "CHANNEL_CREATE", "CHANNEL_UPDATE", "CHANNEL_PINS_UPDATE", "MESSAGE_DELETE_BULK", "USER_UPDATE", "PRESENCE_UPDATE", "TYPING_START", "VOICE_STATE_UPDATE", "VOICE_SERVER_UPDATE", "WEBHOOKS_UPDATE"],
+    disabledEvents: ["TYPING_START"],
+    intents: 32767
+});
+
+client.config = require("./config")
+
+client.on("ready", () => {
+    console.log(`Trying to connect to $
+
+client.login(client.config.token);
