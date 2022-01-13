@@ -9,6 +9,8 @@ const client = new Client ({
 client.config = require("./config")
 
 client.on("ready", () => {
-    console.log(`Trying to connect to $
+    console.log(`Trying to connect to ${client.user.username}...`)
+    console.log(`$client.user.username} is connected...`)
+});
 
 client.login(client.config.token);
