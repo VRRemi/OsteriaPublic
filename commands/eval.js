@@ -20,3 +20,23 @@ module.exports.run = async (client, message, args) => {
         message.channel.send(`\`ERROR\` \`\`\`js\n${clean(err)}\n\`\`\``);
       }
 }
+
+module.exports.help = {
+    name: "eval",
+    category: "owner",
+    aliases: [run],
+    descriptions: "Evaluate some codes",
+    example: "``eval <code>``"
+}
+
+module.exports.requirements = {
+    userPerms: [],
+    clientPerms: ["EMBED_LINKS"],
+    ownerOnly: true,
+    dm_only: false
+}
+
+module.exports.limits = {
+    ratelimit: 2,
+    cooldown: 1e4
+}
