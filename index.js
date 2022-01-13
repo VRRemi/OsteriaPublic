@@ -7,6 +7,16 @@ const client = new Client ({
 });
 
 client.config = require("./config")
+client.logger = async(content, embed) => {
+    let msg = {}
+    if (content) msg.content = content
+    if (embed) msg.embeds = [embed]
+
+    await client.guilds.cache.get(client.config.guildID).channels.cache.get(client.config.logs).send(msg)
+};
+
+client.commands = new Collection();
+client.aliases = new Collection();
 
 client.on("ready", () => {
     console.log(`Trying to connect to ${client.user.username}...`)
