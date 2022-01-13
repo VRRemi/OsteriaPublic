@@ -17,6 +17,10 @@ client.logger = async(content, embed) => {
 
 client.commands = new Collection();
 client.aliases = new Collection();
+client.limits = new Map();
+
+command.run(client);
+events.run(client)
 
 client.on("ready", () => {
     console.log(`Trying to connect to ${client.user.username}...`)
